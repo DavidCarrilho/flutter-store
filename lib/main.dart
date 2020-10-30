@@ -17,7 +17,7 @@ class FurnitureStore extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Store',
         theme: ThemeData(
-          primarySwatch: ColorPalette().lilac,
+          primarySwatch: ColorPalette().color,
           textTheme: TextTheme(
             headline1: TextStyle(
                 fontSize: 20,

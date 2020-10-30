@@ -20,9 +20,9 @@ class CardDetails extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           TextCardDetails(
-              texto: product.title,
-              estilo: Theme.of(context).textTheme.headline1),
-          TextCardDetails(texto: product.description),
+              text: product.title,
+              style: Theme.of(context).textTheme.headline1),
+          TextCardDetails(text: product.description),
           Container(
             margin: EdgeInsets.only(left: 16, right: 16, bottom: 16, top: 8),
             child: Row(

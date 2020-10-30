@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ColorPalette {
-  static Map<int, Color> _showLilac = {
+  static Map<int, Color> _showColor = {
     50: Color.fromRGBO(178, 155, 178, 0.05),
     100: Color.fromRGBO(178, 155, 178, 0.1),
     200: Color.fromRGBO(178, 155, 178, 0.2),
@@ -14,5 +14,5 @@ class ColorPalette {
     900: Color.fromRGBO(178, 155, 178, 0.9),
   };
 
-  MaterialColor lilac = MaterialColor(0xFFB29BB2, _showLilac);
+  MaterialColor color = MaterialColor(0xFF009BB2, _showColor);
 }

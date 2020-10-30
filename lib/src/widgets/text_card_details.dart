@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 
 class TextCardDetails extends StatelessWidget {
-  final String texto;
-  final TextStyle estilo;
+  final String text;
+  final TextStyle style;
 
-  TextCardDetails({this.texto, this.estilo});
+  TextCardDetails({this.text, this.style});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(top: 8, left: 16, right: 16),
-      child: _styleText(texto),
+      child: _styleText(text),
     );
   }
 
-  _styleText(texto) {
-    if (estilo == null) {
-      return Text(texto);
+  _styleText(text) {
+    if (style == null) {
+      return Text(text);
     }
-    return Text(texto, style: estilo);
+    return Text(text, style: style);
   }
 }

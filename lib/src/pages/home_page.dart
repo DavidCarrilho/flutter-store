@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[100],
+      backgroundColor: Colors.white,
       appBar: CustomAppBar(
         titulo: 'Flutter Store',
         isCartPage: false,
@@ -76,12 +76,19 @@ class _HomePageState extends State<HomePage> {
             children: <Widget>[
               Expanded(
                 child: Container(
-                  margin:
-                      EdgeInsets.only(left: 30, right: 20, top: 10, bottom: 10,),
+                  margin: EdgeInsets.only(
+                    left: 30,
+                    right: 20,
+                    top: 10,
+                    bottom: 10,
+                  ),
                   child: Divider(),
                 ),
               ),
-              Text('Produtos'),
+              Text(
+                'Produtos',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
               Expanded(
                   child: Container(
                       margin: EdgeInsets.only(
