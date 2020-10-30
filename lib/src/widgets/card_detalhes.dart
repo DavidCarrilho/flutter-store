@@ -6,7 +6,7 @@ import 'package:flutterstore/src/widgets/text_card_details.dart';
 import 'package:intl/intl.dart';
 
 class CardDetails extends StatelessWidget {
-  final formatacaoReais = NumberFormat.currency(locale: 'pt_BR', symbol: 'R\$');
+  final formatReais = NumberFormat.currency(locale: 'pt_BR', symbol: 'R\$');
 
   final Product product;
   final Function updatePagina;
@@ -29,14 +29,14 @@ class CardDetails extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  formatacaoReais.format(product.price),
+                  formatReais.format(product.price),
                   style: Theme.of(context).textTheme.headline1,
                 ),
                 FlatButton(
                   color: Theme.of(context).primaryColor,
                   onPressed: () {
-                    _verificarListaItemCarrinho(
-                      HomePage.itensCarrinho,
+                    _verifyListItemCart(
+                      HomePage.cartItems,
                       CartItem(product: product, quatity: 1),
                     );
                   },
@@ -50,19 +50,19 @@ class CardDetails extends StatelessWidget {
     );
   }
 
-  void _adicionarItemCarrinho(CartItem item) {
-    HomePage.itensCarrinho.add(item);
+  void _addCartItem(CartItem item) {
+    HomePage.cartItems.add(item);
     updatePagina();
   }
 
-  void _verificarListaItemCarrinho(
-      List<CartItem> lista, CartItem item) {
-    int indiceProduct = lista.indexWhere((item) => item.product == product);
+  void _verifyListItemCart(
+      List<CartItem> list, CartItem item) {
+    int indexProduct = list.indexWhere((item) => item.product == product);
 
-    if (indiceProduct >= 0) {
-      lista[indiceProduct].quatity = lista[indiceProduct].quatity + 1;
+    if (indexProduct >= 0) {
+      list[indexProduct].quatity = list[indexProduct].quatity + 1;
     } else {
-      _adicionarItemCarrinho(item);
+      _addCartItem(item);
     }
   }
 }

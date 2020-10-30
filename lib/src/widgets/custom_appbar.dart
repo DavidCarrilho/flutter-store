@@ -18,7 +18,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
       elevation: 0.0,
       backgroundColor: Colors.transparent,
       centerTitle: true,
-      iconTheme: IconThemeData(color: Colors.black),
+      iconTheme: IconThemeData(color: Colors.orange),
       actions: [
         _changeCartPage(isCartPage),
       ],

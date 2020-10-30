@@ -10,7 +10,7 @@ class CartPage extends StatefulWidget {
 }
 
 class _CartPageState extends State<CartPage> {
-  final formatacaoReais = NumberFormat.currency(locale: 'pt_BR', symbol: 'R\$');
+  final formatReais = NumberFormat.currency(locale: 'pt_BR', symbol: 'R\$');
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +31,10 @@ class _CartPageState extends State<CartPage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text('Total', style: Theme.of(context).textTheme.headline4),
-            Text(formatacaoReais.format(_valueTotal),
-                style: Theme.of(context).textTheme.headline5),
+            Text(
+              formatReais.format(_valueTotal),
+              style: Theme.of(context).textTheme.headline5,
+            ),
           ],
         ),
       ),
@@ -44,8 +46,8 @@ class _CartPageState extends State<CartPage> {
   }
 
   int _calcTotal() {
-    if (HomePage.itensCarrinho.isNotEmpty) {
-      return HomePage.itensCarrinho
+    if (HomePage.cartItems.isNotEmpty) {
+      return HomePage.cartItems
           .map((item) => item.product.price * item.quatity)
           .reduce((precoAtual, precoNovo) => precoAtual + precoNovo);
     }
@@ -54,7 +56,7 @@ class _CartPageState extends State<CartPage> {
   }
 
   Widget _buildScreen() {
-    if (HomePage.itensCarrinho.isNotEmpty) {
+    if (HomePage.cartItems.isNotEmpty) {
       return ListCart(
         update: update,
       );

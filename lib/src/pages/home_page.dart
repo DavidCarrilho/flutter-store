@@ -4,7 +4,7 @@ import 'package:flutterstore/src/widgets/custom_appbar.dart';
 import 'package:flutterstore/src/widgets/products_grid.dart';
 
 class HomePage extends StatefulWidget {
-  static List<CartItem> itensCarrinho = List();
+  static List<CartItem> cartItems = List();
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200],
+      backgroundColor: Colors.blue[100],
       appBar: CustomAppBar(
         titulo: 'Flutter Store',
         isCartPage: false,

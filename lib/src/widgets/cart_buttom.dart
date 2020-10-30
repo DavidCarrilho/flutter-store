@@ -20,19 +20,19 @@ class _ButtomCartState extends State<ButtomCart> {
         padding: EdgeInsets.only(right: 30, left: 20),
         height: 40,
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Colors.orange[100],
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(100),
             topLeft: Radius.circular(100),
           ),
         ),
-        child: _visibilityIndexcadorCart(),
+        child: _visibilityIndicatorCart(),
       ),
     );
   }
 
-  Widget _visibilityIndexcadorCart() {
-    if (HomePage.itensCarrinho.length > 0) {
+  Widget _visibilityIndicatorCart() {
+    if (HomePage.cartItems.length > 0) {
       return Stack(children: [
         Image(
             height: 30,

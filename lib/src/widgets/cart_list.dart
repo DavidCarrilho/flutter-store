@@ -16,8 +16,8 @@ class ListCart extends StatefulWidget {
 }
 
 class _ListCartState extends State<ListCart> {
-  final List<CartItem> cart = HomePage.itensCarrinho;
-  final formatacaoReais = NumberFormat.currency(locale: 'pt_BR', symbol: 'R\$');
+  final List<CartItem> cart = HomePage.cartItems;
+  final formatReais = NumberFormat.currency(locale: 'pt_BR', symbol: 'R\$');
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class _ListCartState extends State<ListCart> {
         Product product = item.product;
 
         return Container(
-          margin: EdgeInsets.all(16),
+          margin: EdgeInsets.symmetric(horizontal: 16, vertical: 6),
           child: Card(
             child: Row(
               children: [
@@ -53,7 +53,7 @@ class _ListCartState extends State<ListCart> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(formatacaoReais.format(product.price)),
+                            Text(formatReais.format(product.price)),
                             Row(
                               children: [
                                 GestureDetector(
@@ -107,7 +107,7 @@ class _ListCartState extends State<ListCart> {
 
   void _removerproduct(CartItem item) {
     setState(() {
-      HomePage.itensCarrinho.remove(item);
+      HomePage.cartItems.remove(item);
       widget.update();
     });
   }
